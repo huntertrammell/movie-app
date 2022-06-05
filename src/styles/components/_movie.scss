@@ -152,6 +152,10 @@
   border: none;
   cursor: pointer;
 
+  @media (max-width: 1000px) {
+    margin: 1rem;
+  }
+
   svg {
     color: whitesmoke;
     height: 4rem;
@@ -181,4 +185,8 @@
   top: 0;
   left: 0;
   margin: 2rem;
+
+  @media (max-width: 1000px) {
+    margin: 1rem;
+  }
 }
