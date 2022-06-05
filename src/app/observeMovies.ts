@@ -8,8 +8,9 @@ export const observeMovies = () => {
       });
     },
     {
+      root: document.body,
       rootMargin: "0px 0px 0px 0px",
-      threshold: 1,
+      threshold: 0.99,
     }
   );
 
