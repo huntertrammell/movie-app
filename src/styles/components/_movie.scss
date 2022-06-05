@@ -10,6 +10,7 @@
   width: 100vw;
   position: relative;
   scroll-snap-align: start;
+  transition: all 0.2s ease;
 }
 
 .movie__backdrop {
@@ -85,26 +86,37 @@
   }
 
   h2 {
+    font-size: 3rem;
+    line-height: 1;
     text-align: left;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
+    @media (max-width: 1000px) {
+      font-size: 2rem;
+    }
   }
 
   ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-      font-style: italic;
-      font-size: .8rem;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-style: italic;
+    font-size: 0.8rem;
 
-      span {
-          font-weight: bold;
-      }
+    span {
+      font-weight: bold;
+    }
   }
 }
 
-.movie--active {
-  opacity: 1 !important;
+.fade-in {
   animation: fadeIn 2s;
+  animation-fill-mode: forwards;
+}
+
+.fade-in-delay {
+  animation: fadeIn 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeIn {
@@ -114,4 +126,59 @@
   100% {
     opacity: 1;
   }
+}
+
+.lazy {
+  opacity: 0;
+}
+
+.movie__nav {
+  position: relative;
+  z-index: 999;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: fadeIn 2s;
+  animation-fill-mode: forwards;
+}
+
+.movie__nav--prev,
+.movie__nav--next {
+  position: fixed;
+  margin: 2rem;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  svg {
+    color: whitesmoke;
+    height: 4rem;
+    width: 4rem;
+
+    @media (max-width: 1000px) {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+}
+
+.movie__nav--next {
+  right: 0;
+  top: 0;
+}
+
+.movie__nav--prev {
+  right: 0;
+  bottom: 0;
+}
+
+.movie__title {
+  position: fixed;
+  z-index: 999;
+  color: white;
+  top: 0;
+  left: 0;
+  margin: 2rem;
 }
