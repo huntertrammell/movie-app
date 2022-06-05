@@ -1,2 +1,4 @@
-# webpack-typescript-scss
-Boilerplate webpack project with TypeScript and Scss
+# Trending Movies
+Intersection Observer driven app that displays the latest trending movies from TMDB
+
+Built using webpack, scss, typescript and the TMDB API
